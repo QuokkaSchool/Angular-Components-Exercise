@@ -1,8 +1,8 @@
 <div class="container container--page container--shrink">
-  <h1 class="text-color">Komponnety</h1>
+  <h1 class="text-color">Komponenty</h1>
 
   <div class="flex justify-content-end">
-    <a href="https://angular.io/guide/architecture-services" target="_blank" rel="noopener noreferrer"
+    <a href="https://angular.io/guide/architecture-components" target="_blank" rel="noopener noreferrer"
        icon="pi pi-check"
        class="p-button p-button-sm font-bold">
       <i class="pi pi-link pr-2"></i>
@@ -10,49 +10,73 @@
     </a>
   </div>
 
-  <p class="text-color"><span class="font-bold">Serwisy </span>w Angular to kluczowy element architektury
-    tej platformy do budowania aplikacji internetowych. Serwisy to klasy, które są singletonami, co oznacza, że istnieje
-    tylko jedna instancja serwisu w całej aplikacji. Są one używane do udostępniania funkcjonalności i danych, które
-    mogą być współdzielone między różnymi komponentami aplikacji.
+  <p class="text-color"><span class="font-bold">Komponent </span> to jeden z trzech kluczowy elementów architektury
+    w Angular. Można je porównać do klocków, które można łączyć ze sobą, aby zbudować bardziej skomplikowane struktury.
+    Każdy komponent jest niezależnym, samowystarczalnym elementem, który obejmuje zarówno logikę biznesową, jak i
+    interfejs użytkownika. Dzięki komponentom, aplikacje są łatwiejsze do zarządzania, rozbudowywania i testowania.
   </p>
 
-  <p class="text-color">Serwisy są wstrzykiwane do komponentów za pomocą mechanizmu wstrzykiwania zależności Angulara
-    <span class="font-bold">(tzw. dependency injection)</span>.
-    Pozwala to na łatwe dostarczanie funkcjonalności serwisów do różnych części aplikacji, co prowadzi do bardziej
-    modułowego i łatwiejszego do testowania kodu.
+  <p class="text-color">
+    Komponent w Angularze składa się z kilku podstawowych plików, które pomagają w organizacji kodu
+    i separacji odpowiedzialności.
   </p>
 
-  <p class="text-color"><span class="font-bold">Przykłady użycia</span> serwisów w aplikacjach:</p>
+  <p class="text-color"><span class="font-bold">Podstawowymi plikami</span> w komponencie są:</p>
   <ul>
-    <li class="text-color mb-2"><span class="font-bold">Serwisy do zarządzania danymi:</span> Serwisy te są
-      wykorzystywane do pobierania danych z serwera, przetwarzania ich i udostępniania komponentom w aplikacji. Mogą to
-      być na przykład serwisy HTTP, które wykonują zapytania do API lub serwisy obsługujące logikę biznesową aplikacji.
+    <li class="text-color mb-2"><span class="font-bold">Plik komponentu (.ts):</span> To plik TypeScript, który zawiera
+      logikę komponentu, w tym właściwości, metody i cykl życia komponentu. Tutaj
+      definiuje się klasę komponentu, która jest dekorowana za pomocą dekoratora @Component.
     </li>
-    <li class="text-color mb-2"><span class="font-bold">Serwisy do udostępniania stanu:</span> Angular obsługuje również
-      serwisy do zarządzania stanem aplikacji, takie jak serwisy przechowujące stan globalny aplikacji, np. za pomocą
-      mechanizmu ReactiveX (np. RxJS) lub stosując wzorzec Redux.
+    <li class="text-color mb-2"><span class="font-bold">Szablon komponentu (.html):</span> To plik HTML, który definiuje
+      strukturę i wygląd komponentu. W Angularze szablony są logicznie powiązane z plikami komponentów za pomocą
+      dekoratora @Component.
     </li>
-    <li class="text-color mb-2"><span class="font-bold">Serwisy do udostępniania funkcjonalności globalnych:</span>
-      Można również tworzyć serwisy, które dostarczają globalnie dostępne funkcjonalności, takie jak usługi do obsługi
-      logiki uwierzytelniania, interakcji z użytkownikiem czy logowania.
+    <li class="text-color mb-2"><span class="font-bold">Styl komponentu (.scss / .css):</span>
+      Opcjonalny plik CSS lub SCSS, który zawiera style dotyczące wyglądu komponentu. Style te mają zastosowanie tylko
+      do tego konkretnego komponentu, co pomaga w utrzymaniu czystości i separacji stylów w aplikacji. Styl komponentu
+      może być również definiowany bezpośrednio w pliku komponentu, korzystając z dekoratora @Component.
     </li>
-    <li class="text-color mb-2"><span class="font-bold">Serwisy do udostępniania narzędzi pomocniczych:</span> Często
-      używa się serwisów do udostępniania narzędzi pomocniczych, takich jak usługi do obsługi zdarzeń, walidacji danych
-      czy manipulacji danymi.
+    <li class="text-color mb-2"><span class="font-bold">Testy komponentu (.spec.ts):</span> Opcjonalny plik, który
+      zawiera testy jednostkowe dla komponentu. Testy te mogą być napisane za pomocą narzędzi takich jak Jasmine lub
+      Jest i pomagają w zapewnieniu poprawności działania komponentu.
     </li>
   </ul>
 
-  <img class="block w-full" src="./../../../assets/angular-services.png">
+  <p class="text-color">
+    Oprócz tych podstawowych plików, komponenty w Angularze mogą także zawierać inne pliki, takie jak pliki
+    konfiguracyjne, pliki do tłumaczeń, czy pliki narzędziowe, w zależności od potrzeb i złożoności aplikacji. Jednak
+    wymienione powyżej są podstawowymi plikami, które są typowe dla większości komponentów w Angularze.
+  </p>
 
-  <p class="text-color"><span class="font-bold">Tworzenie nowego serwisu</span> za pomoca Angular CLI: </p>
+  <p class="text-color"><span class="font-bold">Tworzenie nowego komponentu</span> za pomoca Angular CLI: </p>
   <ul>
-    <li class="text-color mb-2">ng generate service nazwa-serwisu</li>
-    <li class="text-color mb-2">ng g s nazwa-serwisu</li>
+    <li class="text-color mb-2">ng generate component nazwa-komponentu</li>
+    <li class="text-color mb-2">ng g c nazwa-komponentu</li>
   </ul>
 
-  <p class="text-color">Serwisy przeważnie mają możliwość dodaną opcję <span class="font-bold">providedIn: 'root'</span>
-    w dekoratorze. Oznacza to, że serwis będzie widoczny w całej aplikacji bez konieczności dawania go w <span
-      class="font-bold">providers</span> w module. Warto również pamiętać, że jeżeli serwis nie będzie nigdzie użyty to
-    nie zostanie on zawarty w build'e.
+  <p class="text-color">
+    W Angularze, komunikacja między komponentami może odbywać się poprzez mechanizm wejść i wyjść, czyli Inputów i
+    Outputów.
+  </p>
+  <ul>
+    <li class="text-color mb-2"><span class="font-bold">@Input</span> Dekorator który pozwalaja na przekazywanie danych
+      do komponentu.
+    </li>
+    <li class="text-color mb-2"><span class="font-bold">@Output</span> Dekorator który umożliwia komponentowi wysyłanie
+      danych do jego rodzica lub innych komponentów za pomocą emmiterów.
+    </li>
+  </ul>
+
+  <p class="text-color">
+    Przy projektowaniu aplikacji i dzieleniu jej na komponenty warto pamiętać o zasadzie <span class="font-bold"><a
+    href="https://atomicdesign.bradfrost.com/chapter-2/" target="_blank">atomic design</a></span>. Jest to koncepcja,
+    która opiera się na wydzielaniu możliwie jak najmniejszych elementów interfejsu,
+    takie jak np. napisy, pola wprowadzania danych, przyciski. Takie pojedyńcze <span class="font-bold">"atomy"</span>
+    łączą się nastepnie w <span class="font-bold">"molekuły"</span>, czyli bardziej złożone elementy interfejsów np.
+    pola formularza. Z gotowych "molekuł" tworzy się cale organizmy, czyli np. formularze. Z "molekuł" nastepnie składa
+    się całe <span
+    class="font-bold">szablony</span>, które następnie tworzą całe <span
+    class="font-bold">strony</span>. Dzięki takiemu podejściu projektanci i programiści mogą bardziej modularnie budować
+    i zarządzać interfejsem użytkownika.
   </p>
 </div>

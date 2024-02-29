@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-counter',
@@ -7,13 +6,13 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent {
-  protected counter$: Observable<number> = of(0);
+  protected counter: number = 0;
 
   protected increment(): void {
-
+    this.counter++;
   }
 
   protected decrement(): void {
-
+    this.counter++;
   }
 }
