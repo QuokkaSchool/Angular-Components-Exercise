@@ -1,11 +1,14 @@
 <div class="container container--page container--shrink">
   <h1 class="text-color">Licznik (przykład)</h1>
 
-  <div class="flex gap-2">
-    <p-button label="+1" (click)="increment()"/>
-    <input type="text" pInputText [value]="counter" readonly />
-    <p-button label="-1" (click)="decrement()"/>
-  </div>
-
-  <p class="text-color">Aktualna wartość licznika: <span class="font-bold">{{ counter }}</span></p>
+  <app-counter-feature
+    [value]="5"
+    [step]="5"
+    (valueChange)="onValueChange($event)"
+    (incrementClick)="onIncrementClick()"
+    (decrementClick)="onDecrementClick()">
+  </app-counter-feature>
+  <app-counter-feature [value]="0"></app-counter-feature>
+  <app-counter-feature [value]="10"></app-counter-feature>
+  <app-counter-feature [value]="100" [step]="25"></app-counter-feature>
 </div>

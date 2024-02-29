@@ -5,10 +5,12 @@ import { CounterComponent } from './counter.component';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { CounterFeatureComponent } from './components/counter-feature/counter-feature.component';
 
 @NgModule({
   declarations: [
-    CounterComponent
+    CounterComponent,
+    CounterFeatureComponent
   ],
   imports: [
     CommonModule,

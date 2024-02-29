@@ -6,13 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent {
-  protected counter: number = 0;
-
-  protected increment(): void {
-    this.counter++;
+  protected onValueChange(event: number): void {
+    console.log(event);
   }
 
-  protected decrement(): void {
-    this.counter++;
+  protected onIncrementClick(): void {
+    console.log('Zwiększono wartość.');
+  }
+
+  protected onDecrementClick(): void {
+    console.log('Zmniejszono wartość.');
   }
 }
